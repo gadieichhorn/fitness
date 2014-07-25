@@ -1,0 +1,12 @@
+!contents -R2
+!***> '''Variables Defined'''
+
+!define TEST_SYSTEM {slim}
+!define LOCALHOST {localhost:80}
+!define USERNAME {user-001}
+!define PASSWORD {secret123!}
+*!
+
+!***> '''Classpath'''
+${maven.classpath}
+*!

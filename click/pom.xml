@@ -5,7 +5,7 @@
 
     <parent>
         <groupId>com.rds</groupId>
-        <artifactId>fitness</artifactId>
+        <artifactId>fitnesse</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
@@ -16,80 +16,6 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.fitnesse</groupId>
-            <artifactId>fitnesse</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>    
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>plugins</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/fitnesse</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>src/test/fitnesse</directory>
-                                    <includes>
-                                        <include>plugins.properties</include>
-                                    </includes>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>frontpage</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/fitnesse/FitNesseRoot/FrontPage</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>src/test/fitnesse/FrontPage</directory>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>uk.co.javahelp.fitnesse</groupId>
-                <artifactId>fitnesse-launcher-maven-plugin</artifactId>
-                <configuration>
-                    <launches>
-                        <launch>
-                            <suite>JavaExample</suite>
-                        </launch>
-                        <launch>
-                            <suite>SecondExample</suite>
-                        </launch>
-                    </launches>
-                    <useProjectDependencies>
-                        <scope>test</scope>
-                        <scope>runtime</scope>
-                    </useProjectDependencies>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <profiles>
         <profile>
@@ -134,5 +60,78 @@
             </build>
         </profile>
     </profiles>
-    
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.fitnesse</groupId>
+            <artifactId>fitnesse</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>    
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>plugins</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/fitnesse</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/test/fitnesse</directory>
+                                    <includes>
+                                        <include>plugins.properties</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>frontpage</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/fitnesse/FitNesseRoot/FrontPage</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/test/fitnesse/FrontPage</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>uk.co.javahelp.fitnesse</groupId>
+                <artifactId>fitnesse-launcher-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <configuration>
+                    <launches>
+                        <launch>
+                            <suite>ClickAcceptanceTests</suite>
+                        </launch>
+                    </launches>
+                    <useProjectDependencies>
+                        <scope>test</scope>
+                        <scope>runtime</scope>
+                    </useProjectDependencies>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
