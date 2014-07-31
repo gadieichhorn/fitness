@@ -1,0 +1,8 @@
+!contents -R2 -g -p -f -h
+
+|import|
+|com.rds.click.model|
+
+|Task|
+|call ID| number| display id | 
+| 00000111 | 10 | 0000111 | 

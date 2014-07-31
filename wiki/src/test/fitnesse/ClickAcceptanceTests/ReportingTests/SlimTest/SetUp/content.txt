@@ -1,0 +1,17 @@
+!contents -R2 -g -p -f -h
+
+!*> import
+|import|
+|fitnesse.slim.test|
+|fitnesse.fixtures|
+|com.rds.fitnesse.slim.db|
+*!
+
+!*> setup
+| script | Db Slim Setup | oracle.jdbc.driver.OracleDriver | jdbc:oracle:thin:@192.168.237.128:1521:XE | w6admin | w6 |
+*!
+
+!*> define
+!define sqlAssignmentsQuery {select * from w6tasks}
+
+*!

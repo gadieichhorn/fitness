@@ -1,0 +1,14 @@
+!contents -R2 -g -p -f -h
+
+!*> teardown
+
+| script | Db Slim Update Query | delete * from W6TASKS |
+
+| script | Db Slim Query | delete from W6ENGINEERS where W6KEY > 0 |
+
+| script | Db Slim Query | delete from W6ASSIGMNETS where W6KEY > 0 |
+
+| script | Db Slim Query | delete from W6DISTRICTS where W6KEY > 0 |
+
+| script | Db Slim Query | delete from W6REGIONS where W6KEY > 0 |
+*!

@@ -1,0 +1,14 @@
+!contents
+
+!*> setup
+|import|
+|com.rds.click|
+*!
+
+| Click Server |
+| host | user name | password | is alive? |
+|localhost|gadi|demo|true|
+|localhost|gadi|demo2|true|
+|localhost|gadi|demo3|true|
+|localhost|gadi|demo4|true|
+

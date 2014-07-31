@@ -1,0 +1,8 @@
+!contents -R2 -g -p -f -h
+
+!define callId {1}
+!define number {1}
+!define w6key {1}
+
+| script | Db Slim Update Query | Update W6TASKS Set CALLID = ${callId}, W6KEY = ${w6key}, TASKNUMBER = ${number} |
+| check | rowsUpdated; | 1 |

@@ -1,0 +1,17 @@
+!contents -R2 -g -p -f -h
+
+!define callId {10}
+!define number {10101}
+!define key {10001}
+
+| script | Db Slim Update Query | Update W6TASKS Set CALLID = ${callId}, W6KEY = ${key}, TASKNUMBER = ${number} |
+| check | rowsUpdated; | 1 |
+
+|Query:Db Slim Select Query | select * from W6TASKS where W6KEY = ${key} |
+| W6KEY | TASKNUMBER | CALLID |
+| ${key} | ${number} | ${callId} |
+
+|Query:Db Slim Select Query | ${sqlAssignmentsQuery} |
+| W6KEY | TASKNUMBER | CALLID |
+| ${key} | ${number} | ${callId} |
+
