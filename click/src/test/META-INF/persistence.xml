@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="w6admin" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.rds.click.model.generated.W6halquote</class>
+    <class>com.rds.click.model.generated.W6halsalesorder</class>
+    <class>com.rds.click.model.generated.W6tasks</class>
+    <class>com.rds.click.model.generated.W6halquotestatus</class>
+    <class>com.rds.click.model.generated.W6districts</class>
+    <class>com.rds.click.model.generated.W6assignments</class>
+    <class>com.rds.click.model.generated.W6haljobstate</class>
+    <class>com.rds.click.model.generated.W6regions</class>
+    <class>com.rds.click.model.generated.W6haljobforecast</class>
+    <class>com.rds.click.model.generated.W6taskStatuses</class>
+    <class>com.rds.click.model.generated.W6halsalesorderstatus</class>
+    <class>com.rds.click.model.generated.W6haldivision</class>
+    <class>com.rds.click.model.generated.W6engineers</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.237.128:1521:XE"/>
+      <property name="javax.persistence.jdbc.password" value="w6"/>
+      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.user" value="w6admin"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+    </properties>
+  </persistence-unit>
+</persistence>

@@ -1,3 +1,0 @@
-!contents -R2
-
-A central site for all click acceptance tests.
